@@ -7,7 +7,15 @@
             </div>
 
             <x-card :padding="false">
+                <div class="p-6 border-b border-zinc-200 dark:border-zinc-800">
+                    <h2 class="text-lg font-semibold">Passkeys</h2>
+                    <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                        Passkeys allow you to sign in securely without a password
+                    </p>
+                    <x-passkeys.register class="mt-4" />
+                </div>
 
+                <x-passkeys.list :passkeys="auth()->user()->passkeys" />
             </x-card>
         </div>
     </div>

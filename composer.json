@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
+        "laravel/passkeys": "@dev",
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
@@ -88,5 +89,9 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [{
+        "type": "vcs",
+        "url": "git@github.com:laravel/passkeys-server.git"
+    }]
 }
