@@ -12,13 +12,9 @@ This app uses both packages:
 Run the following to get started:
 
 ```bash
-composer install
-npm install
-cp .env.example .env
-php artisan key:generate
-touch database/database.sqlite
-php artisan migrate --seed
-npm run build
+composer setup
 ```
 
 **Note:** the passkey client requires an HTTPS connection. For local development you should use something like Laravel Herd. Make sure PASSKEY_RELYING_PARTY_ID matches your domain.
+
+login with `test@example.com`/`123` to set your first passkey
