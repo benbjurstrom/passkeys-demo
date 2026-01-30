@@ -17,9 +17,8 @@ npm install
 cp .env.example .env
 php artisan key:generate
 touch database/database.sqlite
-php artisan migrate
+php artisan migrate --seed
 npm run build
-composer run dev
 ```
 
-The app will be available at http://localhost:8000.
+**Note:** the passkey client requires an HTTPS connection. For local development you should use something like Laravel Herd. Make sure PASSKEY_RELYING_PARTY_ID matches your domain.

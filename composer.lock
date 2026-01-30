@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f101085f560521868bdbce90b6dac072",
+    "content-hash": "199294c1d2e5f6241c97a085f7b8c77c",
     "packages": [
         {
             "name": "brick/math",
@@ -1328,12 +1328,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/passkeys-server.git",
-                "reference": "b9e4b5a6ec9cf1e59b84bc72ad56b06e69d96cb2"
+                "reference": "f75d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passkeys-server/zipball/b9e4b5a6ec9cf1e59b84bc72ad56b06e69d96cb2",
-                "reference": "b9e4b5a6ec9cf1e59b84bc72ad56b06e69d96cb2",
+                "url": "https://api.github.com/repos/laravel/passkeys-server/zipball/f75d801",
+                "reference": "f75d801",
                 "shasum": ""
             },
             "require": {
@@ -1410,21 +1410,7 @@
                 "source": "https://github.com/laravel/passkeys-server/tree/main",
                 "issues": "https://github.com/laravel/passkeys-server/issues"
             },
-            "funding": [
-                {
-                    "type": "github",
-                    "url": "https://github.com/nunomaduro"
-                },
-                {
-                    "type": "patreon",
-                    "url": "https://www.patreon.com/nunomaduro"
-                },
-                {
-                    "type": "custom",
-                    "url": "https://www.paypal.com/paypalme/enunomaduro"
-                }
-            ],
-            "time": "2026-01-29T00:22:17+00:00"
+            "time": "2026-01-30T15:21:53+00:00"
         },
         {
             "name": "laravel/prompts",
