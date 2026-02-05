@@ -15,6 +15,6 @@ Run the following to get started:
 composer setup
 ```
 
-**Note:** the passkey client requires an HTTPS connection. For local development you should use something like Laravel Herd. Make sure PASSKEY_RELYING_PARTY_ID matches your domain.
+**Note:** the passkey client requires an HTTPS connection. For local development you should use something like Laravel Herd. Make sure APP_URL matches your domain.
 
 login with `test@example.com`/`123` to set your first passkey

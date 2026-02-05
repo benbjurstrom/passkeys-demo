@@ -48,12 +48,13 @@
     });
 
     // Enable passkey autofill
-    if (Passkeys.isAutofillSupported()) {
-        Passkeys.autofill({
-            onSuccess: () => window.location.href = @json($redirect),
-            onError: (error) => showError(error.message || 'Authentication failed'),
-        });
-    }
+    Passkeys.autofill()
+        .then((result) => {
+            if (result?.verified) {
+                window.location.href = @json($redirect);
+            }
+        })
+        .catch((error) => showError(error.message || 'Authentication failed'));
 
     // UI helpers
     const errorEl = document.getElementById('passkey-error');

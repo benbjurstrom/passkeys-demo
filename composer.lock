@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "199294c1d2e5f6241c97a085f7b8c77c",
+    "content-hash": "f7d5cbfca3b2116b0b66a8de64193dc8",
     "packages": [
         {
             "name": "brick/math",
@@ -1328,12 +1328,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/passkeys-server.git",
-                "reference": "f75d801"
+                "reference": "ee16236"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passkeys-server/zipball/f75d801",
-                "reference": "f75d801",
+                "url": "https://api.github.com/repos/laravel/passkeys-server/zipball/ee16236",
+                "reference": "ee16236",
                 "shasum": ""
             },
             "require": {
@@ -1410,7 +1410,7 @@
                 "source": "https://github.com/laravel/passkeys-server/tree/main",
                 "issues": "https://github.com/laravel/passkeys-server/issues"
             },
-            "time": "2026-01-30T15:21:53+00:00"
+            "time": "2026-02-05T00:04:55+00:00"
         },
         {
             "name": "laravel/prompts",
