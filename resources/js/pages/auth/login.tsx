@@ -1,17 +1,20 @@
-import { Form, Head } from '@inertiajs/react';
+import { Form, Head, router } from '@inertiajs/react';
+import { usePasskeyLogin } from '@laravel/passkeys/react';
+import { KeyRound } from 'lucide-react';
 import InputError from '@/components/input-error';
 import TextLink from '@/components/text-link';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Separator } from '@/components/ui/separator';
 import { Spinner } from '@/components/ui/spinner';
 import AuthLayout from '@/layouts/auth-layout';
 import { register } from '@/routes';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
 
-type Props = {
+type LoginProps = {
     status?: string;
     canResetPassword: boolean;
     canRegister: boolean;
@@ -21,13 +24,60 @@ export default function Login({
     status,
     canResetPassword,
     canRegister,
-}: Props) {
+}: LoginProps) {
+    const {
+        login: passkeyLogin,
+        isLoading: passkeyLoading,
+        error: passkeyError,
+        isSupported: passkeySupported,
+    } = usePasskeyLogin({
+        onSuccess: (response) => router.visit(response.redirect),
+        onError: (error) => console.log('Passkey error:', error),
+    });
+
     return (
         <AuthLayout
             title="Log in to your account"
             description="Enter your email and password below to log in"
         >
             <Head title="Log in" />
+
+            {passkeySupported && (
+                <>
+                    <div className="grid gap-2">
+                        <Button
+                            type="button"
+                            variant="outline"
+                            className="w-full"
+                            onClick={() => passkeyLogin()}
+                            disabled={passkeyLoading}
+                        >
+                            {passkeyLoading ? (
+                                <Spinner />
+                            ) : (
+                                <KeyRound className="h-4 w-4" />
+                            )}
+                            {passkeyLoading
+                                ? 'Authenticating...'
+                                : 'Sign in with passkey'}
+                        </Button>
+                        {passkeyError && (
+                            <InputError message={passkeyError} className="text-center" />
+                        )}
+                    </div>
+
+                    <div className="relative my-6">
+                        <div className="absolute inset-0 flex items-center">
+                            <Separator className="w-full" />
+                        </div>
+                        <div className="relative flex justify-center text-xs uppercase">
+                            <span className="bg-background text-muted-foreground px-2">
+                                Or continue with email
+                            </span>
+                        </div>
+                    </div>
+                </>
+            )}
 
             <Form
                 {...store.form()}
@@ -46,7 +96,7 @@ export default function Login({
                                     required
                                     autoFocus
                                     tabIndex={1}
-                                    autoComplete="email"
+                                    autoComplete="email webauthn"
                                     placeholder="email@example.com"
                                 />
                                 <InputError message={errors.email} />

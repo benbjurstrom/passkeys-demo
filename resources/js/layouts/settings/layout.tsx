@@ -28,6 +28,11 @@ const sidebarNavItems: NavItem[] = [
         icon: null,
     },
     {
+        title: 'Passkeys',
+        href: '/settings/passkeys',
+        icon: null,
+    },
+    {
         title: 'Appearance',
         href: editAppearance(),
         icon: null,

@@ -13,6 +13,7 @@
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/fortify": "^1.30",
         "laravel/framework": "^12.0",
+        "laravel/passkeys": "dev-main",
         "laravel/tinker": "^2.10.1",
         "laravel/wayfinder": "^0.1.9"
     },
@@ -43,7 +44,8 @@
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
-            "@php artisan migrate --force",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --seed --force",
             "npm install",
             "npm run build"
         ],
@@ -101,5 +103,9 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [{
+        "type": "vcs",
+        "url": "git@github.com:laravel/passkeys-server.git"
+    }]
 }
