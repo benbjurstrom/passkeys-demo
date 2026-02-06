@@ -22,7 +22,6 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     protected $fillable = [
         'name',
         'email',
-        'password',
     ];
 
     /**
@@ -31,7 +30,6 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
      * @var list<string>
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 
@@ -44,7 +42,6 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
         ];
     }
 }

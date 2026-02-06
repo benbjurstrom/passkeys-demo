@@ -8,7 +8,6 @@ use App\Models\User;
 use App\Notifications\SetupPasskeyNotification;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
@@ -29,7 +28,6 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Str::random(32),
         ]);
 
         $verificationUrl = URL::temporarySignedRoute(
