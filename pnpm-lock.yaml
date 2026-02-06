@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@laravel/passkeys':
         specifier: github:laravel/passkeys#main
-        version: git+https://git@github.com:laravel/passkeys.git#18b37ae5db0512150eb15b92273b1d9f667043fa
+        version: git+https://git@github.com:laravel/passkeys.git#03c67c71ea9ec3bb58dcd2d9ce8f17d2314a074f
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.1.18(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2))
@@ -204,8 +204,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@laravel/passkeys@git+https://git@github.com:laravel/passkeys.git#18b37ae5db0512150eb15b92273b1d9f667043fa':
-    resolution: {commit: 18b37ae5db0512150eb15b92273b1d9f667043fa, repo: git@github.com:laravel/passkeys.git, type: git}
+  '@laravel/passkeys@git+https://git@github.com:laravel/passkeys.git#03c67c71ea9ec3bb58dcd2d9ce8f17d2314a074f':
+    resolution: {commit: 03c67c71ea9ec3bb58dcd2d9ce8f17d2314a074f, repo: git@github.com:laravel/passkeys.git, type: git}
     version: 0.0.1
     engines: {node: '>=18.0.0'}
     peerDependencies:
@@ -924,7 +924,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@laravel/passkeys@git+https://git@github.com:laravel/passkeys.git#18b37ae5db0512150eb15b92273b1d9f667043fa':
+  '@laravel/passkeys@git+https://git@github.com:laravel/passkeys.git#03c67c71ea9ec3bb58dcd2d9ce8f17d2314a074f':
     dependencies:
       '@simplewebauthn/browser': 13.2.2
 

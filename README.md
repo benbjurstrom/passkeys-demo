@@ -1,6 +1,6 @@
 # Laravel Passkeys Demo
 
-This demo showcases first-party passkeys support in Laravel. It demonstrates passwordless authentication using WebAuthn and includes passkey registration, passwordless login, and autofill support.
+This demo showcases first-party passkeys support in Laravel. It demonstrates passwordless registration, passkey login with autofill, and adding a passkey on a new device.
 
 This app uses both packages:
 
@@ -9,12 +9,8 @@ This app uses both packages:
 
 ## Getting Started
 
-Run the following to get started:
-
 ```bash
 composer setup
 ```
 
 **Note:** the passkey client requires an HTTPS connection. For local development you should use something like Laravel Herd. Make sure PASSKEY_RELYING_PARTY_ID matches your domain.
-
-login with `test@example.com`/`123` to set your first passkey

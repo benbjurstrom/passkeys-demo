@@ -7,13 +7,13 @@ return [
     | Relying Party ID
     |--------------------------------------------------------------------------
     |
-    | The identifier for your application in the WebAuthn protocol. This is
-    | typically set to your domain (e.g., "example.com"). Passkeys are bound
+    | The relying party ID represents your application in the WebAuthn protocol.
+    | This is typically your domain (e.g., "example.com"). Passkeys are bound
     | to this ID and can only be verified on matching domains.
     |
     */
 
-    'relying_party_id' => env('PASSKEY_RELYING_PARTY_ID'),
+    'relying_party_id' => parse_url(config('app.url'), PHP_URL_HOST),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,18 +29,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Verification Requirement
-    |--------------------------------------------------------------------------
-    |
-    | Controls user verification during registration and login.
-    | Supported values: "required", "preferred", "discouraged".
-    |
-    */
-
-    'user_verification' => 'required',
-
-    /*
-    |--------------------------------------------------------------------------
     | Authentication Guard
     |--------------------------------------------------------------------------
     |
@@ -50,20 +38,6 @@ return [
     */
 
     'guard' => 'web',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Models
-    |--------------------------------------------------------------------------
-    |
-    | You can customize the model used for passkeys by specifying your own
-    | model class here. Your custom model should extend the base Passkey model.
-    |
-    */
-
-    'models' => [
-        'passkey' => Laravel\Passkeys\Passkey::class,
-    ],
 
     /*
     |--------------------------------------------------------------------------

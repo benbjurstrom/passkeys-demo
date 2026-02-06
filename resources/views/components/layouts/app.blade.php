@@ -28,6 +28,9 @@
                                 @csrf
                                 <x-button type="submit" variant="ghost" size="sm">Logout</x-button>
                             </form>
+                        @else
+                            <a href="{{ route('login') }}" class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100">Login</a>
+                            <a href="{{ route('register') }}" class="text-sm font-medium text-zinc-900 dark:text-zinc-100 hover:underline">Register</a>
                         @endauth
                     </div>
                 </div>
